@@ -38,6 +38,12 @@ class Diff_Merge
         $b = $this->diff->getB();
         $c = array();
         
+        if (is_array($use_lines))
+        {
+            foreach ($use_lines as $key => $val)
+                $use_lines[$key]--;
+        }
+        
         $opCodes = $this->diff->getGroupedOpcodes();
         $last = 0;
         foreach ($opCodes as $group)
@@ -72,10 +78,8 @@ class Diff_Merge
                 {
                     if (($r = $this->inRange($a1, $a2, $use_lines)) !== false)
                     {
-                        var_dump($r);
                         for ($i = $last; $i < $a2; $i++)
                         {
-                            var_dump($i);
                             if (!in_array($i, $r))
                                 $c[] = $a[$i];
                         }
@@ -95,14 +99,22 @@ class Diff_Merge
                     }
                     else
                     {
-                        if (($r = $this->inRange($a1, $a2, $use_lines)) !== false)
+                        if (($r = $this->inRange($b1, $b2, $use_lines)) !== false)
                         {
-                            for ($i = $b1; $i < $b2; $i++)
+                            if (($a2 - $a1) >= ($b2 - $b1))
                             {
-                                if (in_array($i, $r))
+                                for ($i = $b1; $i < $b2; $i++)
+                                {
+                                    if (in_array($i, $r))
+                                        $c[] = $b[$i];
+                                    else
+                                        $c[] = $a[$i];
+                                }
+                            }
+                            else
+                            {
+                                for ($i = $b1; $i < $b2; $i++)
                                     $c[] = $b[$i];
-                                else
-                                    $c[] = $a[$i];
                             }
                         }
                         else

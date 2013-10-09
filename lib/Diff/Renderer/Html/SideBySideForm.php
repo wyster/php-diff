@@ -82,7 +82,7 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 			}
 
 			foreach($blocks as $change) {
-				$html .= '<tbody class="Change'.ucfirst($change['tag']).'">';
+				$html .= '<tbody class="Change'.ucfirst($change['tag']).(($change['tag'] == 'replace' && count($change['base']['lines']) < count($change['changed']['lines'])) ? ' ReplaceMultiline' : '').'">';
 				// Equal changes should be shown on both sides of the diff
 				if($change['tag'] == 'equal') {
 					foreach($change['base']['lines'] as $no => $line) {
@@ -136,7 +136,7 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 								$changedLine = '&nbsp;';
 							}
 							else {
-								$toLine = $change['base']['offset'] + $no + 1;
+								$toLine = $change['changed']['offset'] + $no + 1;
 								$changedLine = '<span>'.$change['changed']['lines'][$no].'</span>';
 							}
 							$html .= '<th>'.$toLine.'</th>';
