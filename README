@@ -10,6 +10,10 @@ rendered in all of the standard formats including:
  * Context
  * Inline HTML
  * Side by Side HTML
+ * Side by Side HTML with Form elements for merging
+ 
+Additionally a simple merge tool is present, to generate and output
+file with only the selected changes.
 
 The logic behind the core of the diff engine (ie, the sequence matcher)
 is primarily based on the Python difflib package. The reason for doing
