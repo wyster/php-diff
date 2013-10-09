@@ -70,14 +70,19 @@ class Diff_Merge
                 }
                 else if ($tag == 'delete' && !$use_del)
                 {
-                    for ($i = $a1; $i < $a2; $i++)
-                        $c[] = $a[$i];
-                }
-                else if ($tag == 'delete' && !$use_del && ($r = $this->inRange($a1, $a2, $use_lines)) !== false)
-                {
-                    for ($i = $a1; $i < $a2; $i++)
+                    if (($r = $this->inRange($a1, $a2, $use_lines)) !== false)
                     {
-                        if (!in_array($i, $r))
+                        var_dump($r);
+                        for ($i = $last; $i < $a2; $i++)
+                        {
+                            var_dump($i);
+                            if (!in_array($i, $r))
+                                $c[] = $a[$i];
+                        }
+                    }
+                    else
+                    {
+                        for ($i = $a1; $i < $a2; $i++)
                             $c[] = $a[$i];
                     }
                 }
