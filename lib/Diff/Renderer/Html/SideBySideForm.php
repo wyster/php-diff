@@ -69,8 +69,8 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 		$html .= '<tr>';
 		$html .= '<th colspan="2">Old Version</th>';
                 $html .= '<th></th>';
-                $html .= '<th>Use</th>';
 		$html .= '<th>New Version</th>';
+                $html .= '<th>Use</th>';
 		$html .= '</tr>';
 		$html .= '</thead>';
 		foreach($changes as $i => $blocks) {
@@ -92,8 +92,8 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 						$html .= '<th>'.$fromLine.'</th>';
 						$html .= '<td class="Left"><span>'.$line.'</span>&nbsp;</span></td>';
 						$html .= '<th>'.$toLine.'</th>';
-                                                $html .= '<td></td>';
 						$html .= '<td class="Right"><span>'.$line.'</span>&nbsp;</span></td>';
+                                                $html .= '<td></td>';
 						$html .= '</tr>';
 					}
 				}
@@ -105,8 +105,8 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 						$html .= '<th>&nbsp;</th>';
 						$html .= '<td class="Left">&nbsp;</td>';
 						$html .= '<th>'.$toLine.'</th>';
-                                                $html .= '<td><input type="checkbox" name="use_line[' . $toLine . ']" value="' . $toLine . '" /></td>';
 						$html .= '<td class="Right"><ins>'.$line.'</ins>&nbsp;</td>';
+                                                $html .= '<td><input type="checkbox" name="use_line[' . $toLine . ']" value="' . $toLine . '" /></td>';
 						$html .= '</tr>';
 					}
 				}
@@ -118,8 +118,8 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 						$html .= '<th>'.$fromLine.'</th>';
 						$html .= '<td class="Left"><del>'.$line.'</del>&nbsp;</td>';
 						$html .= '<th>&nbsp;</th>';
-                                                $html .= '<td><input type="checkbox" name="use_line[' . $fromLine . ']" value="' . $fromLine . '" /></td>';
 						$html .= '<td class="Right">&nbsp;</td>';
+                                                $html .= '<td><input type="checkbox" name="use_line[' . $fromLine . ']" value="' . $fromLine . '" /></td>';
 						$html .= '</tr>';
 					}
 				}
@@ -140,8 +140,8 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 								$changedLine = '<span>'.$change['changed']['lines'][$no].'</span>';
 							}
 							$html .= '<th>'.$toLine.'</th>';
-                                                        $html .= '<td><input type="checkbox" name="use_line[' . $toLine . ']" value="' . $toLine . '" /></td>';
 							$html .= '<td class="Right">'.$changedLine.'</td>';
+                                                        $html .= '<td><input type="checkbox" name="use_line[' . $toLine . ']" value="' . $toLine . '" /></td>';
 							$html .= '</tr>';
 						}
 					}
@@ -160,8 +160,8 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 							$html .= '<td class="Left"><span>'.$line.'</span>&nbsp;</td>';
 							$toLine = $change['changed']['offset'] + $no + 1;
 							$html .= '<th>'.$toLine.'</th>';
-                                                        $html .= '<td><input type="checkbox" name="use_line[' . $toLine . ']" value="' . $toLine . '" /></td>';
 							$html .= '<td class="Right">'.$changedLine.'</td>';
+                                                        $html .= '<td><input type="checkbox" name="use_line[' . $toLine . ']" value="' . $toLine . '" /></td>';
 							$html .= '</tr>';
 						}
 					}
