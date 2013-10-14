@@ -161,7 +161,8 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 							$toLine = $change['changed']['offset'] + $no + 1;
 							$html .= '<th>'.$toLine.'</th>';
 							$html .= '<td class="Right">'.$changedLine.'</td>';
-                                                        $html .= '<td><input type="checkbox" name="use_line[' . $toLine . ']" value="' . $toLine . '" /></td>';
+                                                        if ($no == 0)
+                                                            $html .= '<td rowspan="' . count($change['changed']['lines']) . '"><input type="checkbox" name="use_line[' . $toLine . ']" value="' . $toLine . '" /></td>';
 							$html .= '</tr>';
 						}
 					}
@@ -171,7 +172,7 @@ class Diff_Renderer_Html_SideBySideForm extends Diff_Renderer_Html_Array
 		}
 		$html .= '</table>';
                 $html .= '<input type="checkbox" name="use_type[]" value="1" /> Use all inserts<br />';
-                $html .= '<input type="checkbox" name="use_type[]" value="2" /> Use all replaces<br />';
+                $html .= '<input type="checkbox" name="use_type[]" value="2" /> Use all replaces and insert-replaces<br />';
                 $html .= '<input type="checkbox" name="use_type[]" value="4" /> Use all deletes<br />';
                 $html .= '<br /><input type="submit" name="merge" value="Merge" />';
                 $html .= '</form>';
