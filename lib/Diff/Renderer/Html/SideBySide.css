@@ -1,5 +1,5 @@
-* { font-family: monospace; font-size: 9pt; }
-table.Differences {}
+table.Differences { width: 100%; }
+table.Differences * { font-family: monospace; font-size: 9pt; }
 table.DifferencesSideBySide {}
 table.DifferencesSideBySide tbody.ChangeEqual { color: #888; }
 table.DifferencesSideBySide tbody.ChangeReplace { background-color: #fffeb0; }
