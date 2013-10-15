@@ -128,6 +128,9 @@ class Diff_Merge
             }
         }
         
+        for ($i = $last; $i < count($b); $i++)
+            $c[] = $b[$i];
+        
         return $c;
     }
     
