@@ -1,0 +1,11 @@
+table.Differences { width: 100%; }
+table.Differences * { font-family: monospace; font-size: 9pt; }
+table.DifferencesSideBySide {}
+table.DifferencesSideBySide tbody.ChangeEqual { color: #888; }
+table.DifferencesSideBySide tbody.ChangeReplace { background-color: #fffeb0; }
+table.DifferencesSideBySide tbody.ChangeReplace.ReplaceMultiline { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAMUlEQVQImW3NsREAQAgCQfuvhpKohPvgE3Ucsr2AIsJtRBBRF47Q0fiHjcbUhSPsrwcca4V1EfiRQwAAAABJRU5ErkJggg==); }
+table.DifferencesSideBySide tbody.ChangeInsert { background-color: #e0ffe0; }
+table.DifferencesSideBySide tbody.Skipped {}
+table.DifferencesSideBySide tbody.ChangeDelete { background-color: #ffe0e0; }
+table.DifferencesSideBySide ins { background-color: #c0ffc0; color: #050; text-decoration: none; }
+table.DifferencesSideBySide del { background-color: #ffc0c0; color: #500; text-decoration: none; }
