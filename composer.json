@@ -3,13 +3,6 @@
     "type": "library",
     "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
     "license": "BSD-3-Clause",
-	
-	"repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/wyster/php-diff"
-    }
-	],
 
     "authors": [
         {
